@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-surface-950 text-slate-200 font-sans;
+  }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-white/10 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-white/20; }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/[0.04] backdrop-blur-xl;
+  }
+  .glass-strong {
+    @apply bg-white/[0.08] backdrop-blur-2xl;
+  }
+
+  /* Table status colors */
+  .table-free {
+    @apply bg-palm-500/20 border-palm-500/40 text-palm-400;
+  }
+  .table-occupied {
+    @apply bg-ocean-500/20 border-ocean-500/40 text-ocean-400;
+  }
+  .table-minimum-pending {
+    @apply bg-coral-500/20 border-coral-500/40 text-coral-400;
+  }
+  .table-vip {
+    @apply bg-sand-400/20 border-sand-400/40 text-sand-400;
+  }
+  .table-closed {
+    @apply bg-slate-500/20 border-slate-500/40 text-slate-400;
+  }
+
+  .btn-primary {
+    @apply px-5 py-2.5 rounded-xl bg-gradient-to-r from-ocean-500 to-ocean-600
+           text-white text-sm font-semibold
+           hover:shadow-lg hover:shadow-ocean-500/25 transition-all duration-200;
+  }
+  .btn-coral {
+    @apply px-5 py-2.5 rounded-xl bg-gradient-to-r from-coral-500 to-coral-600
+           text-white text-sm font-semibold
+           hover:shadow-lg hover:shadow-coral-500/25 transition-all duration-200;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full font-semibold uppercase tracking-wider;
+  }
+  .badge-free { @apply bg-palm-500/15 text-palm-400; }
+  .badge-occupied { @apply bg-ocean-500/15 text-ocean-400; }
+  .badge-pending { @apply bg-coral-500/15 text-coral-400; }
+  .badge-vip { @apply bg-sand-400/15 text-sand-400; }
+  .badge-closed { @apply bg-slate-500/15 text-slate-400; }
+
+  .ocean-gradient-text {
+    @apply bg-gradient-to-r from-ocean-400 via-palm-400 to-ocean-300 bg-clip-text text-transparent;
+  }
+}
